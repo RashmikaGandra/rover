@@ -1,8 +1,14 @@
 package com.tw.step.rover.roversystem;
 
+import com.tw.step.rover.boundary.Boundary;
+import com.tw.step.rover.boundary.Plateau;
 import com.tw.step.rover.commands.RoverCommands;
 import com.tw.step.rover.position.Coordinate;
 import com.tw.step.rover.position.Direction;
+
+import java.util.Arrays;
+
+import static java.lang.Integer.parseInt;
 
 public class RoverSystemScanner {
     private final String[] tokens;
@@ -36,7 +42,7 @@ public class RoverSystemScanner {
     }
 
     public int scanNumber() {
-        return Integer.parseInt(consume());
+        return parseInt(consume());
     }
 
     public Coordinate scanCoordinate() {
@@ -47,5 +53,15 @@ public class RoverSystemScanner {
 
     public Direction scanDirection() {
         return Direction.valueOf(this.consume());
+    }
+
+    public Plateau scanPlateau(){
+        int top = this.scanNumber();
+        int right = this.scanNumber();
+
+        Coordinate bottomLeft = new Coordinate(0, 0);
+        Coordinate topRight = new Coordinate(top, right);
+
+        return new Plateau(bottomLeft, topRight);
     }
 }

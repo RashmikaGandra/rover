@@ -11,7 +11,8 @@ import com.tw.step.rover.roversystem.RoverSystemScanner;
 public class App {
     static void main() {
         String text = """
-1 5 N
+5 5
+1 3 N
 LFFRFLFFFR
                 """;
 

@@ -31,8 +31,8 @@ public class RoverSystemParser {
 
     public RoverSystem parse() {
         RoverSystem roverSystem = new RoverSystem();
-        Boundary boundary1 = parsePlateau();
-        this.boundary = boundary1;
+        Boundary finiteBoundary = parsePlateau();
+        this.boundary = finiteBoundary;
         Rover rover = parseRover();
         roverSystem.addRover(rover);
         RoverCommands roverCommands = parseRoverCommands();

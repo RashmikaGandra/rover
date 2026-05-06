@@ -6,8 +6,7 @@ import com.tw.step.rover.position.Direction;
 import com.tw.step.rover.position.Navigator;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.*;
 
 class DeadRoverStateTest {
     @Test
@@ -20,6 +19,6 @@ class DeadRoverStateTest {
         assertSame(state, state.turnLeft(navigator, boundary));
         assertSame(state, state.turnRight(navigator, boundary));
         assertSame(state, state.move(navigator, boundary));
-        assertEquals("1 1 N", rover.toString());
+        assertEquals("1 1 NALIVE", rover.toString());
     }
 }
